@@ -1,0 +1,96 @@
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 2.5
+  Exclude:
+    - app/views/**/*
+    - config/**/*
+    - bin/**/*
+    - db/migrate/*.rb
+    - db/seeds/**/*
+    - db/schema.rb
+    - lib/templates/rails/scaffold_controller/controller.rb
+    - node_modules/**/*
+    - spec/rails_helper.rb
+    - spec/spec_helper.rb
+    - Rakefile
+
+Layout/HashAlignment:
+  Enabled: false
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 250
+  Exclude:
+    - db/seeds/**/*
+
+Lint/DuplicateMethods:
+  Exclude:
+    - app/models/contact_lens_test.rb
+
+Lint/RaiseException:
+  Enabled: false
+
+Lint/StructNewOverride:
+  Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 60
+
+Metrics/BlockLength:
+  Max: 50
+  Exclude:
+    - db/seeds/**/*
+    - spec/**/*
+
+Metrics/CyclomaticComplexity:
+  Max: 8
+
+Metrics/ClassLength:
+  Max: 250
+
+Metrics/MethodLength:
+  Max: 50
+
+Metrics/ModuleLength:
+  Max: 100
+  Exclude:
+    - app/helpers/dynamic_exam_field_helper.rb
+
+Metrics/PerceivedComplexity:
+  Max: 8
+
+Metrics/ParameterLists:
+  Max: 6
+
+Style/ConditionalAssignment:
+  Exclude:
+    - app/controllers/attendances_controller.rb
+
+Style/Documentation:
+  Enabled: false
+
+Style/ExponentialNotation:
+  Enabled: false
+
+Style/RescueStandardError:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: false
+
+Style/HashTransformKeys:
+  Enabled: false
+
+Style/HashTransformValues:
+  Enabled: false
+
+Style/CaseEquality:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
