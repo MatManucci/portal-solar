@@ -1,12 +1,23 @@
 # Portal Solar - Dev Test
 
+## Project setup dev
+
+```sh
+docker-compose --compatibility build
+
+docker-compose --compatibility run --rm web bash
+    yarn install --check-files
+    bundle install
+    rails db:create db:migrate
+    RAILS_ENV=development rails db:seed
+```
 ## Teste para vagas de Desenvolvimento
 
 
 
 ### Introdução
 
-Aqui na Portal Solar utilizamos a linguagem Ruby juntamente com o framework Rails, famoso "RoR",
+Aqui na Portal Solar utilizamos a linguagem Rubyap juntamente com o framework Rails, famoso "RoR",
 em grande parte das soluções que desenvolvemos para nossos produtos, mais pensamos muito na usabilidade 
 dos nossos times e clientes, assim os frameworks JavaScripts são vistos com bons olhos.
 

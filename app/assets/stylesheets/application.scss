@@ -60,10 +60,10 @@ p.power_generator-card__price {
 
 .header__title {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 60px;
+  font-size: 40px;
   color: #000;
   text-align: center;
-  margin-left: 46%;
+  margin-left: 20%;
 }
 
 .gradient {
@@ -142,3 +142,31 @@ p.power_generator-card__price {
   color: #e96443;
 }
 
+.pagination {
+  border-left: 1px solid #ddd;
+  .first{
+      padding : 0;
+      float: none;
+      border: none;
+  }
+  .prev {
+      padding : 0;
+      float: none;
+      border: none;
+  }
+  .page{
+      padding : 0;
+      float: none;
+      border: none;
+  }
+  .next{
+      padding : 0;
+      float: none;
+      border: none;
+  }
+  .last{
+      padding : 0;
+      float: none;
+      border: none;
+  }
+}
