@@ -15,7 +15,6 @@ RSpec.describe PowerGenerator, type: :model do
     let!(:power_generator_trapezoidal) { create(:power_generator, structure_type: :trapezoidal) }
 
     context 'results of advanced search ' do
-      
       it {expect(PowerGenerator.advanced_search('laje')).not_to be_nil }
       it { expect(PowerGenerator.advanced_search('laje')).to include(power_generator_laje) }
 
