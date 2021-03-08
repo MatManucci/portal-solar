@@ -4,8 +4,10 @@ volumes:
   gems:
 
 services:
-  postgres:
-    image: postgres:13.1-alpine
+  db:
+    image: postgres:12.3
+    ports:
+      - "5432:5432"
     environment:
       POSTGRES_HOST_AUTH_METHOD: 'trust'
       POSTGRES_USER: pguser
