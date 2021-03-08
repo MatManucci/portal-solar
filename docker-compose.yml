@@ -4,8 +4,8 @@ volumes:
   gems:
 
 services:
-  db:
-    image: postgres:12.3
+  postgres:
+    image: postgres:13.1-alpine
     ports:
       - "5432:5432"
     environment:
