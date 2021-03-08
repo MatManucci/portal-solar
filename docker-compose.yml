@@ -1,29 +1,24 @@
-version: '3.7'
-
-volumes:
-  gems:
-
+version: '3'
 services:
-  postgres:
-    image: postgres:13.1-alpine
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./tmp/postgres_data:/var/lib/postgresql/data
     environment:
       POSTGRES_HOST_AUTH_METHOD: 'trust'
-      POSTGRES_USER: pguser
-      POSTGRES_PASSWORD: postgres
-    volumes:
-      - ./tmp/postgres:/var/lib/postgresql/data
-
+      POSTGRES_DB: portal_solar_development
   web:
-    build: .
-    depends_on:
-      - postgres
-    ports:
-      - 3006:3006
-    volumes:
-      - gems:/usr/local/bundle
-      - .:/opt/app:cached
+    build:
+      context: .
+      dockerfile: Dockerfile
     environment:
-      DB_HOST: 'postgres'
-      TIME_ZONE: 'Brasilia'
-      ROLLBAR_ENV: '478590031f6c4db5bc9aa41840aa23bf'
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3006 -b '0.0.0.0'"
+      DATABASE_URL: postgresql://postgres@db
+    command: /bin/bash -c "rm -f /tmp/server.pid && bundle exec rails server -b 0.0.0.0 -P /tmp/server.pid"
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    volumes:
+      - .:/app
