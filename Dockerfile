@@ -16,7 +16,6 @@ WORKDIR /app
 EXPOSE 3000
 
 COPY Gemfile .
-COPY Gemfile.lock .
 RUN gem update bundler
 RUN bundle update
 RUN bundle install --jobs 5
