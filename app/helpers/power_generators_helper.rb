@@ -1,0 +1,2 @@
+module PowerGeneratorsHelper
+end

@@ -27,9 +27,24 @@
       </div>
 
       <div class="advanced-form" style="display:none;">
-        Entradas do usuário para pesquisar uma coleção de geradores de energia com base nas recomendações fornecidas e melhor custo de frete.
+      
+      <% end %>
+    </div>
+  </div>
+
+  <div class="advanced-form" style="display:none;">
+      <div class="row">
+      Realize a pesquisa para receber sugestões certeiras do gerador de energia que melhor irá lhe atender
       </div>
-    <% end %>
+      <div>
+        <p>
+        <label  class="advanced-search-form__label">selecione o tipo de estrutura que suportará o gerador de energia</label>
+        <%= select('power_generator', 'structure_type', PowerGenerator.distinct.pluck(:structure_type), include_blank: 'Tipo do telhado', class: 'form-control form-control-lg') %>
+      </div>
+      <div class="advanced-form__btn">
+        <button type="submit" class="btn btn-outline-primary btn-lg">Buscar</button>
+      </div>
+    </div>
   </div>
 
   <div class="container" >
@@ -45,4 +60,4 @@
     <% end %>
   </div>
 </div>
-<%= paginate @power_generators, window: 2 , class: 'pagination'%>
+<%= paginate @power_generators, window: 2 , class: 'justify-content-center' %>
