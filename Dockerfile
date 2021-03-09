@@ -1,4 +1,3 @@
-
 FROM ruby:2.6.3
 
 RUN apt-get update && apt-get install -y \
@@ -16,9 +15,11 @@ WORKDIR /app
 EXPOSE 3000
 
 COPY Gemfile .
+COPY Gemfile.lock .
 RUN gem update bundler
 RUN bundle update
 RUN bundle install --jobs 5
 
 COPY package.json .
+COPY yarn.lock .
 RUN yarn install --check-files

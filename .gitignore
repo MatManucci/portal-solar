@@ -1,41 +1,21 @@
-/.bundle
-
-# Ignore all logfiles and tempfiles.
+.bundle
 /log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/*.DS_Store
-
-# Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
-
 /public/assets
 .byebug_history
-
-coverage
-# Ignore master key for decrypting credentials and more.
 /config/master.key
-
 /public/packs
 /public/packs-test
 /node_modules
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-/package-lock.json
-Gemfile.lock
-yarn.lock
-.eslintrc.js
+coverage/assets
+coverage/index.html
 
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
 
 
