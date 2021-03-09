@@ -23,3 +23,5 @@ RUN bundle install --jobs 5
 COPY package.json .
 COPY yarn.lock .
 RUN yarn install --check-files
+
+CMD bash start.sh
